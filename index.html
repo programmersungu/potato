@@ -6,10 +6,27 @@
 </head>
 <body style="text-align:center; font-family:sans-serif; padding:40px;">
   <h2>오늘의 칭찬</h2>
-  <p id="complimentOutput" style="font-size:18px; font-weight:bold; margin-bottom:20px;"></p>
 
-  <input type="text" id="nameInput" placeholder="이름을 입력하세요" style="padding:10px; font-size:16px;">
-  <button onclick="generateCompliment()" style="padding:10px 20px; font-size:16px; margin-left:8px;">칭찬받기</button>
+  <!-- 🥔이 항상 붙는 칭찬 문구 -->
+  <p id="complimentOutput" style="font-size:18px; font-weight:bold; margin-bottom:20px;">🥔: 오늘의 칭찬이 여기에 나타납니다!</p>
+
+  <!-- 이름 입력 -->
+  <input
+    type="text"
+    id="nameInput"
+    placeholder="이름을 입력하세요"
+    style="padding:10px; font-size:16px; margin-bottom:10px;"
+  >
+  
+  <br>
+
+  <!-- 버튼과 이름 입력 사이에 여백 -->
+  <button
+    onclick="generateCompliment()"
+    style="padding:10px 20px; font-size:16px; margin-top:10px;"
+  >
+    칭찬받기
+  </button>
 
   <script>
     function generateCompliment() {
@@ -17,7 +34,7 @@
       const output = document.getElementById("complimentOutput");
 
       if (!name) {
-        output.textContent = "이름을 먼저 입력해주세요!";
+        output.textContent = "🥔: 이름을 먼저 입력해주세요!";
         return;
       }
 
@@ -30,7 +47,7 @@
       ];
 
       const randomIndex = Math.floor(Math.random() * compliments.length);
-      output.textContent = compliments[randomIndex];
+      output.textContent = "🥔: " + compliments[randomIndex];
     }
   </script>
 </body>
